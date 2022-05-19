@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.top {
+    font-family: sans-serif;
+    background-color: #222222;
+    min-height: 100px;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: 0.07em;
+}
+
+.footer {
+    font-family: sans-serif;
+    background: #222222;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: 0.07em;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
