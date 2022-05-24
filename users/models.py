@@ -9,3 +9,6 @@ class User(models.Model):
     first_name = models.CharField('first name', max_length=64)
     last_name = models.CharField('last name', max_length=64)
     email = models.EmailField('email address', unique=True, blank=True)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
