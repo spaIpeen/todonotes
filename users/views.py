@@ -3,7 +3,7 @@ from .serializers import UserModelSerializer
 from rest_framework import mixins, viewsets
 
 
-class ArticleCustomViewSet(mixins.ListModelMixin, mixins.UpdateModelMixin,
-                           mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class UserCustomViewSet(mixins.ListModelMixin, mixins.UpdateModelMixin,
+                        mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
