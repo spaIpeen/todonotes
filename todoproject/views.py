@@ -1,8 +1,7 @@
-from rest_framework import viewsets, status
-from rest_framework.response import Response
+from rest_framework import viewsets
 from rest_framework.viewsets import ModelViewSet
 from .models import Project, ToDo
-from .serializers import ProjectSerializer, ToDoSerializer
+from .serializers import ProjectSerializer, ToDoSerializer, ToDoSerializerBase
 from rest_framework.pagination import LimitOffsetPagination
 from .filters import ToDoFilter, ProjectFilter
 
@@ -31,3 +30,8 @@ class ToDoModelViewSet(viewsets.ModelViewSet):
     def perform_destroy(self, instance):
         instance.is_active = False
         instance.save()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return ToDoSerializer
+        return ToDoSerializerBase
