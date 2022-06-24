@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
-    # 'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
     'drf_yasg',
+    'graphene_django',
 
     'users',
     'todoproject'
@@ -153,4 +153,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+}
+
+GRAPHENE = {
+    "SCHEMA": "todonotes.schema.schema"
 }
