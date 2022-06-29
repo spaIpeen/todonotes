@@ -27,9 +27,9 @@ class ToDoModelViewSet(viewsets.ModelViewSet):
     pagination_class = ToDoLimitOffsetPagination
     filterset_class = ToDoFilter
 
-    def perform_destroy(self, instance):
-        instance.is_active = False
-        instance.save()
+    # def perform_destroy(self, instance):
+    #     instance.is_active = False
+    #     instance.save()
 
     def get_serializer_class(self):
         if self.request.method in ['GET']:
